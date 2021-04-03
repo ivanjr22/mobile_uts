@@ -12,16 +12,21 @@ class EntryForm extends StatefulWidget {
 class EntryFormState extends State<EntryForm> {
   Item item;
   EntryFormState(this.item);
-  TextEditingController nameController = TextEditingController();
-  TextEditingController priceController = TextEditingController();
+  TextEditingController judulbukuController = TextEditingController();
+  TextEditingController penerbitController = TextEditingController();
+  TextEditingController hargaController = TextEditingController();
   TextEditingController stockController = TextEditingController();
-  TextEditingController codeController = TextEditingController();
+  TextEditingController tahunterbitController = TextEditingController();
+  TextEditingController expiredController = TextEditingController();
   @override
   Widget build(BuildContext context) {
 //kondisi
     if (item != null) {
-      nameController.text = item.name;
-      priceController.text = item.price.toString();
+      judulbukuController.text = item.judulbuku;
+      penerbitController.text = item.penerbit;
+      hargaController.text = item.harga.toString();
+      stockController.text = item.stock.toString();
+      tahunterbitController.text = item.tahunterbit;
     }
 //rubah
     return Scaffold(
@@ -37,10 +42,10 @@ class EntryFormState extends State<EntryForm> {
               Padding(
                 padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
                 child: TextField(
-                  controller: nameController,
+                  controller: judulbukuController,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                    labelText: 'Nama Barang',
+                    labelText: 'Judul Buku',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5.0),
                     ),
@@ -50,14 +55,14 @@ class EntryFormState extends State<EntryForm> {
                   },
                 ),
               ),
-// harga
+// merk
               Padding(
                 padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
                 child: TextField(
-                  controller: priceController,
-                  keyboardType: TextInputType.number,
+                  controller: penerbitController,
+                  keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                    labelText: 'Harga',
+                    labelText: 'Penerbit Buku',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5.0),
                     ),
@@ -67,14 +72,14 @@ class EntryFormState extends State<EntryForm> {
                   },
                 ),
               ),
-// kode barang
+//harga
               Padding(
                 padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
                 child: TextField(
-                  controller: codeController,
+                  controller: hargaController,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
-                    labelText: 'Kode Barang',
+                    labelText: 'Harga Barang',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5.0),
                     ),
@@ -84,14 +89,14 @@ class EntryFormState extends State<EntryForm> {
                   },
                 ),
               ),
-// stok
+//stock
               Padding(
                 padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
                 child: TextField(
                   controller: stockController,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
-                    labelText: 'Stok',
+                    labelText: 'Stock Barang',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5.0),
                     ),
@@ -101,7 +106,25 @@ class EntryFormState extends State<EntryForm> {
                   },
                 ),
               ),
-
+//kodebarang
+              Padding(
+                padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
+                child: TextField(
+                  controller: tahunterbitController,
+                  keyboardType: TextInputType.text,
+                  decoration: InputDecoration(
+                    labelText: 'Tahunt Terbit',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(5.0),
+                    ),
+                  ),
+                  onChanged: (value) {
+//
+                  },
+                ),
+              ),
+//expired
+             
 // tombol button
               Padding(
                 padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
@@ -120,13 +143,19 @@ class EntryFormState extends State<EntryForm> {
                           if (item == null) {
 // tambah data
                             item = Item(
-                              nameController.text,
-                              int.parse(priceController.text),
-                            );
+                                judulbukuController.text,
+                                penerbitController.text,
+                                int.parse(hargaController.text),
+                                int.parse(stockController.text),
+                                int.parse(tahunterbitController.text),
+                                );
                           } else {
 // ubah data
-                            item.name = nameController.text;
-                            item.price = int.parse(priceController.text);
+                            item.judulbuku = judulbukuController.text;
+                            item.penerbit = penerbitController.text;
+                            item.harga = int.parse(hargaController.text);
+                            item.stock = int.parse(stockController.text);
+                            item.tahunterbit = tahunterbitController.text;
                           }
 // kembali ke layar sebelumnya dengan membawa objek item
                           Navigator.pop(context, item);
@@ -155,6 +184,6 @@ class EntryFormState extends State<EntryForm> {
               ),
             ],
           ),
-      ));
+        ));
   }
 }
