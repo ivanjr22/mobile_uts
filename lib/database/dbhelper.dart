@@ -30,11 +30,10 @@ class DbHelper {
     batch.execute('''
  CREATE TABLE buku (
  idBuku INTEGER PRIMARY KEY AUTOINCREMENT,
-  kategoriBuku TEXT,
   namaBuku TEXT,
+  kategoriBuku TEXT,
   penerbitBuku TEXT,
-  penulisBuku TEXT,
-  jumlahBuku INTEGER
+  tahunBuku INTEGER
  )
  ''');
     batch.execute('''
