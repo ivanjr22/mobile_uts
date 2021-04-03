@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_uts/pages/home.dart'; 
+import 'package:mobile_uts/pages/homestok.dart'; 
 
 void main() => runApp(MyApp());
 
@@ -30,8 +31,8 @@ class MyApp extends StatelessWidget {
             ),
             body: TabBarView(
               children: [
-                HomeBook(HomeBook),
-                HomeAnggota(HomeAnggota),
+                Home(Home),
+                HomeStok(HomeStok),
             ],
           )
         ),
