@@ -61,13 +61,13 @@ class DbHelper {
     return mapList;
   }
 
-  Future<int> insertBook(Buku object) async {
+  Future<int> insertBuku(Buku object) async {
     Database db = await this.initDb();
     int count = await db.insert('buku', object.toMap());
     return count;
   }
 
-  Future<int> insertAnggota(Stok object) async {
+  Future<int> insertStok(Stok object) async {
     Database db = await this.initDb();
     int count = await db.insert('stok', object.toMap());
     return count;
@@ -100,7 +100,7 @@ class DbHelper {
     return count;
   }
 
-  Future<List<Buku>> getBookList() async {
+  Future<List<Buku>> getBukuList() async {
     var bukuMapList = await selectBuku();
     int count = bukuMapList.length;
     List<Buku> bukuList = List<Buku>();
