@@ -8,11 +8,34 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Tambahkan Item',
+      title: 'Tambah',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.deepOrange,
       ),
-      home: Home(),
+      home: DefaultTabController(
+        length: 2,
+        child: Scaffold(
+            appBar: AppBar(
+              title: Text("Stok Toko Buku"),
+              bottom: TabBar(
+                tabs: <Widget>[
+                  Tab(
+                    text: "Daftar Buku",
+                  ),
+                  Tab(
+                    text: "Stok Buku",
+                  ),
+                ],
+              ),
+            ),
+            body: TabBarView(
+              children: [
+                HomeBook(HomeBook),
+                HomeAnggota(HomeAnggota),
+            ],
+          )
+        ),
+      ),
     );
   }
 }
