@@ -37,95 +37,87 @@ class DbHelper {
  )
  ''');
     batch.execute('''
- CREATE TABLE anggota (
- idAnggota INTEGER PRIMARY KEY AUTOINCREMENT,
-  namaAnggota TEXT,
-  jenisAnggota TEXT,
-  alamatAnggota TEXT,
-  nik INTEGER,
-  umur INTEGER
+ CREATE TABLE stok (
+ idBuku INTEGER PRIMARY KEY AUTOINCREMENT,
+  namaBuku TEXT,
+  kategoriBuku TEXT,
+  penerbitBuku TEXT,
+  tahunBuku INTEGER,
+  stokBuku INTEGER
  )
  ''');
     await batch.commit();
   }
 
-  //fungsi untuk select database
-  Future<List<Map<String, dynamic>>> selectBook() async {
+  Future<List<Map<String, dynamic>>> selectBuku() async {
     Database db = await this.initDb();
-    var mapList = await db.query('book', orderBy: 'namaBuku');
+    var mapList = await db.query('buku', orderBy: 'namaBuku');
     return mapList;
   }
 
-  Future<List<Map<String, dynamic>>> selectAnggota() async {
+  Future<List<Map<String, dynamic>>> selectStok() async {
     Database db = await this.initDb();
-    var mapList = await db.query('anggota', orderBy: 'namaAnggota');
+    var mapList = await db.query('stok', orderBy: 'namaBuku');
     return mapList;
   }
 
-  //fungsi untuk mengisi data pada tabel book
-  Future<int> insertBook(Book object) async {
+  Future<int> insertBook(Buku object) async {
     Database db = await this.initDb();
-    int count = await db.insert('book', object.toMap());
+    int count = await db.insert('buku', object.toMap());
     return count;
   }
 
-  //fungsi untuk mengisi data pada tabel anggota
-  Future<int> insertAnggota(Anggota object) async {
+  Future<int> insertAnggota(Stok object) async {
     Database db = await this.initDb();
-    int count = await db.insert('anggota', object.toMap());
+    int count = await db.insert('stok', object.toMap());
     return count;
   }
 
-  //fungsi untuk update data tabel book
-  Future<int> updateBook(Book object) async {
+  Future<int> updateBuku(Buku object) async {
     Database db = await this.initDb();
-    int count = await db.update('book', object.toMap(),
+    int count = await db.update('buku', object.toMap(),
         where: 'idBuku=?', whereArgs: [object.idBuku]);
     return count;
   }
 
-  //fungsi untuk update tabel anggota
-  Future<int> updateAnggota(Anggota object) async {
+  Future<int> updateStok(Stok object) async {
     Database db = await this.initDb();
-    int count = await db.update('anggota', object.toMap(),
-        where: 'idAnggota=?', whereArgs: [object.idAnggota]);
+    int count = await db.update('stok', object.toMap(),
+        where: 'idBuku=?', whereArgs: [object.idBuku]);
     return count;
   }
-  //fungsi untuk menghapus data tabel book
 
-  Future<int> deleteBook(int idBuku) async {
+  Future<int> deleteBuku(int idBuku) async {
     Database db = await this.initDb();
-    int count = await db.delete('book', where: 'idBuku=?', whereArgs: [idBuku]);
+    int count = await db.delete('buku', where: 'idBuku=?', whereArgs: [idBuku]);
     return count;
   }
-  //fungsi untuk menghapus data tabel book
 
-  Future<int> deleteAnggota(int idAnggota) async {
+  Future<int> deleteStok(int idBuku) async {
     Database db = await this.initDb();
     int count = await db
-        .delete('anggota', where: 'idAnggota=?', whereArgs: [idAnggota]);
+        .delete('stok', where: 'idBuku=?', whereArgs: [idBuku]);
     return count;
   }
 
-  //fungsi untuk mengembalikan nilai data data yang baru dimasukkan
-  Future<List<Book>> getBookList() async {
-    var bookMapList = await selectBook();
-    int count = bookMapList.length;
-    List<Book> bookList = List<Book>();
+  Future<List<Buku>> getBookList() async {
+    var bukuMapList = await selectBuku();
+    int count = bukuMapList.length;
+    List<Buku> bukuList = List<Buku>();
     for (int i = 0; i < count; i++) {
-      bookList.add(Book.fromMap(bookMapList[i]));
+      bukuList.add(Buku.fromMap(bukuMapList[i]));
     }
-    return bookList;
+    return bukuList;
   }
 
-  Future<List<Anggota>> getAnggotaList() async {
-    var anggotaMapList = await selectAnggota();
-    int count = anggotaMapList.length;
-    List<Anggota> anggotaList = List<Anggota>();
+  Future<List<Stok>> getStokList() async {
+    var stokMapList = await selectStok();
+    int count = stokMapList.length;
+    List<Stok> stokList = List<Stok>();
     for (int i = 0; i < count; i++) {
-      anggotaList.add(Anggota.fromMap(anggotaMapList[i]));
+      stokList.add(Stok.fromMap(stokMapList[i]));
     }
-    return anggotaList;
+    return stokList;
   }
 
   factory DbHelper() {
