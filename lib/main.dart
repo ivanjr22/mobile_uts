@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_uts/pages/homeBuku.dart'; 
-import 'package:mobile_uts/pages/homestok.dart'; 
+import 'package:mobile_uts/pages/homeStok.dart'; 
 
 void main() => runApp(MyApp());
 

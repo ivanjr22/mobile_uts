@@ -11,11 +11,11 @@ class DbHelper {
   DbHelper._createObject();
   Future<Database> initDb() async {
     Directory directory = await getApplicationDocumentsDirectory();
-    String path = directory.path + 'tokobuku.db';
+    String path = directory.path + 'stoktokobuku.db';
 
-    var tokobukuDatabase =
+    var stoktokobukuDatabase =
         openDatabase(path, version: 9, onCreate: _createDb);
-    return tokobukuDatabase;
+    return stoktokobukuDatabase;
   }
 
   void _onUpgrade(Database db, int oldVersion, int newVersion) async {

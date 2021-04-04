@@ -54,7 +54,7 @@ class HomeStokState extends State<HomeStok> {
 
   Future<Stok> navigateToEntryForm(
       BuildContext context, Stok stok) async {
-    var result = await Navigator.push(context,
+      var result = await Navigator.push(context,
         MaterialPageRoute(builder: (BuildContext context) {
       return FromStok(stok);
     }));
