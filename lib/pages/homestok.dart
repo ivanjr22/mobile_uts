@@ -37,7 +37,7 @@ class HomeStokState extends State<HomeStok> {
             width: double.infinity,
             child: RaisedButton(
               child: Text("Tambah"),
-              color: Colors.deepOrange[400],
+              color: Colors.blue,
               textColor: Colors.white,
               onPressed: () async {
                 var stok = await navigateToEntryForm(context, null);
@@ -75,7 +75,7 @@ class HomeStokState extends State<HomeStok> {
           child: ListTile(
             leading: CircleAvatar(
               backgroundColor: Colors.red,
-              child: Icon(Icons.people),
+              child: Icon(Icons.book),
             ),
             title: Text(
               this.stokList[index].namaBuku,

@@ -37,7 +37,7 @@ class HomeBukuState extends State<HomeBuku> {
             width: double.infinity,
             child: RaisedButton(
               child: Text("Tambah"),
-              color: Colors.deepOrange[400],
+              color: Colors.blue,
                 textColor: Colors.white,
               onPressed: () async {
                 var Buku = await navigateToEntryForm(context, null);
