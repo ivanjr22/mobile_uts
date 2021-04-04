@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_uts/pages/home.dart'; 
+import 'package:mobile_uts/pages/homeBuku.dart'; 
 import 'package:mobile_uts/pages/homestok.dart'; 
 
 void main() => runApp(MyApp());
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Tambah',
       theme: ThemeData(
-        primarySwatch: Colors.deepOrange,
+        primarySwatch: Colors.blue,
       ),
       home: DefaultTabController(
         length: 2,
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
             ),
             body: TabBarView(
               children: [
-                Home(Home),
+                HomeBuku(HomeBuku),
                 HomeStok(HomeStok),
             ],
           )
