@@ -1,45 +1,45 @@
 class Stok {
-  int _idBuku;
-  String _namaBuku;
-  String _kategoriBuku;
-  String _penerbitBuku;
-  int _tahunBuku;
-  int _stokBuku;
+  int _idStok;
+  String _namaStok;
+  String _kategoriStok;
+  String _penerbitStok;
+  int _tahunStok;
+  int _stokStok;
 
-  Stok(this._kategoriBuku, this._namaBuku, this._penerbitBuku, this._tahunBuku, this._stokBuku);
+  Stok(this._namaStok, this._kategoriStok, this._penerbitStok, this._tahunStok, this._stokStok);
   Stok.fromMap(Map<String, dynamic> map) {
-    this._idBuku = map['idBuku'];
-    this._namaBuku = map['namaBuku'];
-    this._kategoriBuku = map['kategoriBuku'];
-    this._penerbitBuku = map['penerbitBuku'];
-    this._tahunBuku = map['tahunBuku'];
-    this._stokBuku = map ['stokBuku'];
+    this._idStok = map['idStok'];
+    this._namaStok = map['namaStok'];
+    this._kategoriStok = map['kategoriStok'];
+    this._penerbitStok = map['penerbitStok'];
+    this._tahunStok = map['tahunStok'];
+    this._stokStok = map ['stokStok'];
   }
-  int get idBuku => _idBuku;
+  int get idStok => _idStok;
 
-  String get namaBuku => this._namaBuku;
-  set namaBuku(String value) => this._namaBuku = value;
+  String get namaStok => this._namaStok;
+  set namaStok(String value) => this._namaStok = value;
 
-  String get kategoriBuku => this._kategoriBuku;
-  set kategoriBuku(String value) => this._kategoriBuku = value;
+  String get kategoriStok => this._kategoriStok;
+  set kategoriStok(String value) => this._kategoriStok = value;
   
-  String get penerbitBuku => this._penerbitBuku;
-  set penerbitBuku(String value) => this._penerbitBuku = value;
+  String get penerbitStok => this._penerbitStok;
+  set penerbitStok(String value) => this._penerbitStok = value;
 
-  get tahunBuku => this._tahunBuku;
-  set tahunBuku(value) => this._tahunBuku = value;
+  get tahunStok => this._tahunStok;
+  set tahunStok(value) => this._tahunStok = value;
 
-  get stokBuku => this._stokBuku;
-  set stokBuku(value) => this._stokBuku = value;
+  get stokStok => this._stokStok;
+  set stokStok(value) => this._stokStok = value;
 
   Map<String, dynamic> toMap() {
     Map<String, dynamic> map = Map<String, dynamic>();
-    map['idBuku'] = this._idBuku;
-    map['namaBuku'] = namaBuku;
-    map['kategoriBuku'] = kategoriBuku;
-    map['penerbitBuku'] = penerbitBuku;
-    map['tahunBuku'] = tahunBuku;
-    map['stokBuku'] = stokBuku;
+    map['idStok'] = this._idStok;
+    map['namaStok'] = namaStok;
+    map['kategoriStok'] = kategoriStok;
+    map['penerbitStok'] = penerbitStok;
+    map['tahunStok'] = tahunStok;
+    map['stokStok'] = stokStok;
     return map;
   }
 }

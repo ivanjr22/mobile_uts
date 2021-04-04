@@ -38,12 +38,12 @@ class DbHelper {
  ''');
     batch.execute('''
  CREATE TABLE stok (
- idBuku INTEGER PRIMARY KEY AUTOINCREMENT,
-  namaBuku TEXT,
-  kategoriBuku TEXT,
-  penerbitBuku TEXT,
-  tahunBuku INTEGER,
-  stokBuku INTEGER
+ idStok INTEGER PRIMARY KEY AUTOINCREMENT,
+  namaStok TEXT,
+  kategoriStok TEXT,
+  penerbitStok TEXT,
+  tahunStok INTEGER,
+  stokStok INTEGER
  )
  ''');
     await batch.commit();
@@ -57,7 +57,7 @@ class DbHelper {
 
   Future<List<Map<String, dynamic>>> selectStok() async {
     Database db = await this.initDb();
-    var mapList = await db.query('stok', orderBy: 'namaBuku');
+    var mapList = await db.query('stok', orderBy: 'namaStok');
     return mapList;
   }
 
@@ -83,7 +83,7 @@ class DbHelper {
   Future<int> updateStok(Stok object) async {
     Database db = await this.initDb();
     int count = await db.update('stok', object.toMap(),
-        where: 'idBuku=?', whereArgs: [object.idBuku]);
+        where: 'idStok=?', whereArgs: [object.idStok]);
     return count;
   }
 
@@ -93,10 +93,9 @@ class DbHelper {
     return count;
   }
 
-  Future<int> deleteStok(int idBuku) async {
+  Future<int> deleteStok(int idStok) async {
     Database db = await this.initDb();
-    int count = await db
-        .delete('stok', where: 'idBuku=?', whereArgs: [idBuku]);
+    int count = await db.delete('stok', where: 'idStok=?', whereArgs: [idStok]);
     return count;
   }
 

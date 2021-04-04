@@ -12,19 +12,19 @@ class FromStok extends StatefulWidget {
 class FromStokState extends State<FromStok> {
   Stok stok;
   FromStokState(this.stok);
-  TextEditingController namaBukuController = TextEditingController();
-  TextEditingController kategoriBukuController = TextEditingController();
-  TextEditingController penerbitBukuController = TextEditingController();
-  TextEditingController tahunBukuController = TextEditingController();
-  TextEditingController stokBukuController = TextEditingController();
+  TextEditingController namaStokController = TextEditingController();
+  TextEditingController kategoriStokController = TextEditingController();
+  TextEditingController penerbitStokController = TextEditingController();
+  TextEditingController tahunStokController = TextEditingController();
+  TextEditingController stokStokController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     if (stok != null) {
-      namaBukuController.text = stok.namaBuku;
-      kategoriBukuController.text = stok.kategoriBuku;
-      penerbitBukuController.text = stok.penerbitBuku;
-      tahunBukuController.text = stok.tahunBuku.toString();
-      stokBukuController .text = stok.stokBuku.toString();
+      namaStokController.text = stok.namaStok;
+      kategoriStokController.text = stok.kategoriStok;
+      penerbitStokController.text = stok.penerbitStok;
+      tahunStokController.text = stok.tahunStok.toString();
+      stokStokController .text = stok.stokStok.toString();
     }
     return Scaffold(
         appBar: AppBar(
@@ -38,10 +38,10 @@ class FromStokState extends State<FromStok> {
               Padding(
                 padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
                 child: TextField(
-                  controller: namaBukuController,
+                  controller: namaStokController,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                    labelText: 'Nama Buku',
+                    labelText: 'Nama Stok',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5.0),
                     ),
@@ -53,10 +53,10 @@ class FromStokState extends State<FromStok> {
               Padding(
                 padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
                 child: TextField(
-                  controller: kategoriBukuController,
+                  controller: kategoriStokController,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                    labelText: 'Kategori Buku',
+                    labelText: 'Kategori Stok',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5.0),
                     ),
@@ -68,10 +68,10 @@ class FromStokState extends State<FromStok> {
               Padding(
                 padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
                 child: TextField(
-                  controller: penerbitBukuController,
+                  controller: penerbitStokController,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                    labelText: 'Penerbit Buku',
+                    labelText: 'Penerbit Stok',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5.0),
                     ),
@@ -83,10 +83,10 @@ class FromStokState extends State<FromStok> {
               Padding(
                 padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
                 child: TextField(
-                  controller: tahunBukuController,
+                  controller: tahunStokController,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
-                    labelText: 'Tahun Buku',
+                    labelText: 'Tahun Stok',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5.0),
                     ),
@@ -98,10 +98,10 @@ class FromStokState extends State<FromStok> {
               Padding(
                 padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
                 child: TextField(
-                  controller: stokBukuController,
+                  controller: stokStokController,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
-                    labelText: 'Stok Buku',
+                    labelText: 'Stok Stok',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5.0),
                     ),
@@ -122,17 +122,17 @@ class FromStokState extends State<FromStok> {
                         onPressed: () {
                           if (stok == null) {
                             stok = Stok(
-                                namaBukuController.text,
-                                kategoriBukuController.text,
-                                penerbitBukuController.text,
-                                int.parse(tahunBukuController.text),
-                                int.parse(stokBukuController.text));
+                                namaStokController.text,
+                                kategoriStokController.text,
+                                penerbitStokController.text,
+                                int.parse(tahunStokController.text),
+                                int.parse(stokStokController.text));
                           } else {
-                            stok.namaBuku = namaBukuController.text;
-                            stok.kategoriBuku = kategoriBukuController.text;
-                            stok.penerbitBuku = penerbitBukuController.text;
-                            stok.tahunBuku = int.parse(tahunBukuController.text);
-                            stok.stokBuku = int.parse(stokBukuController.text);
+                            stok.namaStok = namaStokController.text;
+                            stok.kategoriStok = kategoriStokController.text;
+                            stok.penerbitStok = penerbitStokController.text;
+                            stok.tahunStok = int.parse(tahunStokController.text);
+                            stok.stokStok = int.parse(stokStokController.text);
                           }
                           Navigator.pop(context, Stok);
                         },

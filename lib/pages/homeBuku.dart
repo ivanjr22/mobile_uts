@@ -24,9 +24,6 @@ class HomeBukuState extends State<HomeBuku> {
       BukuList = List<Buku>();
     }
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Daftar Buku'),
-      ),
       body: Column(children: [
         Expanded(
           child: createListView(),
