@@ -1,4 +1,3 @@
-import 'package:mobile_uts/pages/homeBuku.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:mobile_uts/model/buku.dart';
@@ -15,7 +14,7 @@ class DbHelper {
     String path = directory.path + 'tokobuku.db';
 
     var tokobukuDatabase =
-        openDatabase(path, version: 10, onCreate: _createDb);
+        openDatabase(path, version: 9, onCreate: _createDb);
     return tokobukuDatabase;
   }
 

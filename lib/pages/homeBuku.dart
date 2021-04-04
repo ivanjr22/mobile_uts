@@ -79,7 +79,7 @@ class HomeBukuState extends State<HomeBuku> {
             ),
             subtitle: Text(
               "Kategori: " + this.BukuList[index].kategoriBuku.toString() +
-              "Penerbit: " + this.BukuList[index].penerbitBuku),
+              " Penerbit: " + this.BukuList[index].penerbitBuku),
             trailing: GestureDetector(
               child: Icon(Icons.delete),
               onTap: () async {

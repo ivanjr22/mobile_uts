@@ -45,7 +45,6 @@ class FromBukuState extends State<FromBuku> {
                     ),
                   ),
                   onChanged: (value) {
-                    //
                   },
                 ),
               ),
@@ -77,7 +76,6 @@ class FromBukuState extends State<FromBuku> {
                     ),
                   ),
                   onChanged: (value) {
-                    //
                   },
                 ),
               ),
@@ -116,8 +114,7 @@ class FromBukuState extends State<FromBuku> {
                             buku.namaBuku = namaBukuController.text;
                             buku.kategoriBuku = kategoriBukuController.text;
                             buku.penerbitBuku = penerbitBukuController.text;
-                            buku.tahunBuku =
-                                int.parse(tahunBukuController.text);
+                            buku.tahunBuku = int.parse(tahunBukuController.text);
                           }
                           Navigator.pop(context, buku);
                         },

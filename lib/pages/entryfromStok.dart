@@ -101,7 +101,7 @@ class FromStokState extends State<FromStok> {
                   controller: stokStokController,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
-                    labelText: 'Stok Stok',
+                    labelText: 'Stok Buku',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5.0),
                     ),
@@ -134,7 +134,7 @@ class FromStokState extends State<FromStok> {
                             stok.tahunStok = int.parse(tahunStokController.text);
                             stok.stokStok = int.parse(stokStokController.text);
                           }
-                          Navigator.pop(context, Stok);
+                          Navigator.pop(context, stok);
                         },
                       ),
                     ),

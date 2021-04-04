@@ -15,13 +15,13 @@ class HomeStok extends StatefulWidget {
 class HomeStokState extends State<HomeStok> {
   DbHelper dbHelper = DbHelper();
   int count = 0;
-  List<Stok> stokList;
+  List<Stok> StokList;
   @override
   Widget build(BuildContext context) {
     updateListView();
 
-    if (stokList == null) {
-      stokList = List<Stok>();
+    if (StokList == null) {
+      StokList = List<Stok>();
     }
     return Scaffold(
       body: Column(children: [
@@ -37,9 +37,9 @@ class HomeStokState extends State<HomeStok> {
               color: Colors.blue,
               textColor: Colors.white,
               onPressed: () async {
-                var stok = await navigateToEntryForm(context, null);
-                if (stok != null) {
-                  int result = await dbHelper.insertStok(stok);
+                var Stok = await navigateToEntryForm(context, null);
+                if (Stok != null) {
+                  int result = await dbHelper.insertStok(Stok);
                   if (result > 0) {
                     updateListView();
                   }
@@ -72,28 +72,28 @@ class HomeStokState extends State<HomeStok> {
           child: ListTile(
             leading: CircleAvatar(
               backgroundColor: Colors.red,
-              child: Icon(Icons.book),
+              child: Icon(Icons.ad_units),
             ),
             title: Text(
-              this.stokList[index].namaStok,
+              this.StokList[index].namaStok,
               style: textStyle,
             ),
             subtitle: Text(
-              "Kategori: " + this.stokList[index].kategoriStok +
-              "Penerbit: " + this.stokList[index].penerbitStok +
-              "Stok: " + this.stokList[index].stokStok.toString()),
+              "Kategori: " + this.StokList[index].kategoriStok +
+              " Penerbit: " + this.StokList[index].penerbitStok +
+              " Stok: " + this.StokList[index].stokStok.toString()),
             trailing: GestureDetector(
               child: Icon(Icons.delete),
               onTap: () async {
-                dbHelper.deleteStok(this.stokList[index].idStok);
+                dbHelper.deleteStok(this.StokList[index].idStok);
                 updateListView();
               },
             ),
             onTap: () async {
-              var stok =
-                  await navigateToEntryForm(context, this.stokList[index]);
-              if (stok != null) {
-                int result = await dbHelper.updateStok(stok);
+              var Stok =
+                  await navigateToEntryForm(context, this.StokList[index]);
+              if (Stok != null) {
+                int result = await dbHelper.updateStok(Stok);
                 if (result > 0) {
                   updateListView();
                 }
@@ -108,11 +108,11 @@ class HomeStokState extends State<HomeStok> {
   void updateListView() {
     final Future<Database> dbFuture = dbHelper.initDb();
     dbFuture.then((database) {
-      Future<List<Stok>> stokListFuture = dbHelper.getStokList();
-      stokListFuture.then((stokList) {
+      Future<List<Stok>> StokListFuture = dbHelper.getStokList();
+      StokListFuture.then((stokList) {
         setState(() {
-          this.stokList = stokList;
-          this.count = stokList.length;
+          this.StokList = StokList;
+          this.count = StokList.length;
         });
       });
     });
