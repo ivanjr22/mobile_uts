@@ -53,10 +53,10 @@ class HomeStokState extends State<HomeStok> {
   }
 
   Future<Stok> navigateToEntryForm(
-      BuildContext context, Stok stok) async {
+      BuildContext context, Stok Stok) async {
       var result = await Navigator.push(context,
         MaterialPageRoute(builder: (BuildContext context) {
-      return FromStok(stok);
+      return FromStok(Stok);
     }));
     return result;
   }
@@ -109,7 +109,7 @@ class HomeStokState extends State<HomeStok> {
     final Future<Database> dbFuture = dbHelper.initDb();
     dbFuture.then((database) {
       Future<List<Stok>> StokListFuture = dbHelper.getStokList();
-      StokListFuture.then((stokList) {
+      StokListFuture.then((StokList) {
         setState(() {
           this.StokList = StokList;
           this.count = StokList.length;
