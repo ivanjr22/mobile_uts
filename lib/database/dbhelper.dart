@@ -14,7 +14,7 @@ class DbHelper {
     String path = directory.path + 'stoktokobuku.db';
 
     var stoktokobukuDatabase =
-        openDatabase(path, version: 9, onCreate: _createDb);
+        openDatabase(path, version: 10, onCreate: _createDb);
     return stoktokobukuDatabase;
   }
 
