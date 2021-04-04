@@ -24,9 +24,6 @@ class HomeStokState extends State<HomeStok> {
       stokList = List<Stok>();
     }
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Daftar Stok Buku'),
-      ),
       body: Column(children: [
         Expanded(
           child: createListView(),
@@ -78,17 +75,17 @@ class HomeStokState extends State<HomeStok> {
               child: Icon(Icons.book),
             ),
             title: Text(
-              this.stokList[index].namaBuku,
+              this.stokList[index].namaStok,
               style: textStyle,
             ),
             subtitle: Text(
-              "Kategori: " + this.stokList[index].kategoriBuku +
-              "Penerbit: " + this.stokList[index].penerbitBuku +
-              "Stok: " + this.stokList[index].stokBuku.toString()),
+              "Kategori: " + this.stokList[index].kategoriStok +
+              "Penerbit: " + this.stokList[index].penerbitStok +
+              "Stok: " + this.stokList[index].stokStok.toString()),
             trailing: GestureDetector(
               child: Icon(Icons.delete),
               onTap: () async {
-                dbHelper.deleteStok(this.stokList[index].idBuku);
+                dbHelper.deleteStok(this.stokList[index].idStok);
                 updateListView();
               },
             ),
@@ -121,5 +118,3 @@ class HomeStokState extends State<HomeStok> {
     });
   }
 }
-
-
