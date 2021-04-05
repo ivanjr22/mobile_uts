@@ -80,7 +80,7 @@ class HomeStokState extends State<HomeStok> {
             ),
             subtitle: Text(
               "Kategori: " + this.StokList[index].kategoriStok +
-              " Stok: " + this.StokList[index].stokStok.toString()),
+              "     Stok: " + this.StokList[index].stokStok.toString()),
             trailing: GestureDetector(
               child: Icon(Icons.delete_forever),
               onTap: () async {
