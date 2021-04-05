@@ -16,13 +16,13 @@ class Stok {
     this._stokStok = map ['stokStok'];
   }
   int get idStok => _idStok;
-
+  //getter and setter
   String get namaStok => this._namaStok;
   set namaStok(String value) => this._namaStok = value;
-
+  //getter and setter
   String get kategoriStok => this._kategoriStok;
   set kategoriStok(String value) => this._kategoriStok = value;
-  
+  //getter and setter
   String get penerbitStok => this._penerbitStok;
   set penerbitStok(String value) => this._penerbitStok = value;
 
