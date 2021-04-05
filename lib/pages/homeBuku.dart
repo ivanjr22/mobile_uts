@@ -70,7 +70,7 @@ class HomeBukuState extends State<HomeBuku> {
           elevation: 2.0,
           child: ListTile(
             leading: CircleAvatar(
-              backgroundColor: Colors.red,
+              backgroundColor: Colors.blue,
               child: Icon(Icons.bookmark),
             ),
             title: Text(
