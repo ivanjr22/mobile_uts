@@ -71,7 +71,7 @@ class HomeStokState extends State<HomeStok> {
           elevation: 2.0,
           child: ListTile(
             leading: CircleAvatar(
-              backgroundColor: Colors.red,
+              backgroundColor: Colors.blue,
               child: Icon(Icons.book),
             ),
             title: Text(
@@ -82,7 +82,7 @@ class HomeStokState extends State<HomeStok> {
               "Kategori: " + this.StokList[index].kategoriStok +
               " Stok: " + this.StokList[index].stokStok.toString()),
             trailing: GestureDetector(
-              child: Icon(Icons.delete),
+              child: Icon(Icons.delete_forever),
               onTap: () async {
                 dbHelper.deleteStok(this.StokList[index].idStok);
                 updateListView();
