@@ -71,7 +71,7 @@ class HomeBukuState extends State<HomeBuku> {
           child: ListTile(
             leading: CircleAvatar(
               backgroundColor: Colors.red,
-              child: Icon(Icons.ad_units),
+              child: Icon(Icons.bookmark),
             ),
             title: Text(
               this.BukuList[index].namaBuku,
@@ -80,7 +80,7 @@ class HomeBukuState extends State<HomeBuku> {
             subtitle: Text(
               "Penerbit: " + this.BukuList[index].penerbitBuku),
             trailing: GestureDetector(
-              child: Icon(Icons.delete),
+              child: Icon(Icons.delete_forever),
               onTap: () async {
                 dbHelper.deleteBuku(this.BukuList[index].idBuku);
                 updateListView();
