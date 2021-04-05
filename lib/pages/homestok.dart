@@ -72,7 +72,7 @@ class HomeStokState extends State<HomeStok> {
           child: ListTile(
             leading: CircleAvatar(
               backgroundColor: Colors.red,
-              child: Icon(Icons.ad_units),
+              child: Icon(Icons.book),
             ),
             title: Text(
               this.StokList[index].namaStok,
@@ -80,7 +80,6 @@ class HomeStokState extends State<HomeStok> {
             ),
             subtitle: Text(
               "Kategori: " + this.StokList[index].kategoriStok +
-              " Penerbit: " + this.StokList[index].penerbitStok +
               " Stok: " + this.StokList[index].stokStok.toString()),
             trailing: GestureDetector(
               child: Icon(Icons.delete),
