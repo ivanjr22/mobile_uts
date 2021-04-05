@@ -5,11 +5,10 @@ class Buku {
   String _penerbitBuku;
   int _tahunBuku;
 
-  Buku(this._kategoriBuku, this._namaBuku, this._penerbitBuku, this._tahunBuku);
+  Buku(this._namaBuku, this._penerbitBuku, this._tahunBuku);
   Buku.fromMap(Map<String, dynamic> map) {
     this._idBuku = map['idBuku'];
     this._namaBuku = map['namaBuku'];
-    this._kategoriBuku = map['kategoriBuku'];
     this._penerbitBuku = map['penerbitBuku'];
     this._tahunBuku = map['tahunBuku'];
   }
@@ -17,9 +16,6 @@ class Buku {
 
   String get namaBuku => this._namaBuku;
   set namaBuku(String value) => this._namaBuku = value;
-
-  String get kategoriBuku => this._kategoriBuku;
-  set kategoriBuku(String value) => this._kategoriBuku = value;
   
   String get penerbitBuku => this._penerbitBuku;
   set penerbitBuku(String value) => this._penerbitBuku = value;
@@ -31,7 +27,6 @@ class Buku {
     Map<String, dynamic> map = Map<String, dynamic>();
     map['idBuku'] = this._idBuku;
     map['namaBuku'] = namaBuku;
-    map['kategoriBuku'] = kategoriBuku;
     map['penerbitBuku'] = penerbitBuku;
     map['tahunBuku'] = tahunBuku;
     return map;
