@@ -17,14 +17,14 @@ class MyApp extends StatelessWidget {
         length: 2,
         child: Scaffold(
             appBar: AppBar(
-              title: Text("Stok Toko Buku"),
+              title: Text("Toko Buku Sarjana"),
               bottom: TabBar(
                 tabs: <Widget>[
                   Tab(
                     text: "Daftar Buku",
                   ),
                   Tab(
-                    text: "Stok Buku",
+                    text: "Daftar Stok Buku",
                   ),
                 ],
               ),
