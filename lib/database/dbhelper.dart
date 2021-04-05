@@ -21,7 +21,7 @@ class DbHelper {
   void _onUpgrade(Database db, int oldVersion, int newVersion) async {
     _createDb(db, newVersion);
   }
-
+//Craate Table buku dan stok
   void _createDb(Database db, int version) async {
     var batch = db.batch();
     batch.execute('DROP TABLE IF EXISTS buku');
@@ -58,39 +58,39 @@ class DbHelper {
     var mapList = await db.query('stok', orderBy: 'namaStok');
     return mapList;
   }
-
+  //insert data pada tabel buku
   Future<int> insertBuku(Buku object) async {
     Database db = await this.initDb();
     int count = await db.insert('buku', object.toMap());
     return count;
   }
-
+  //insert data pada tabel stok
   Future<int> insertStok(Stok object) async {
     Database db = await this.initDb();
     int count = await db.insert('stok', object.toMap());
     return count;
   }
-
+  //update data pada tabel buku
   Future<int> updateBuku(Buku object) async {
     Database db = await this.initDb();
     int count = await db.update('buku', object.toMap(),
         where: 'idBuku=?', whereArgs: [object.idBuku]);
     return count;
   }
-
+  //update data pada tabel stok
   Future<int> updateStok(Stok object) async {
     Database db = await this.initDb();
     int count = await db.update('stok', object.toMap(),
         where: 'idStok=?', whereArgs: [object.idStok]);
     return count;
   }
-
+  //delete data pada tabel buku
   Future<int> deleteBuku(int idBuku) async {
     Database db = await this.initDb();
     int count = await db.delete('buku', where: 'idBuku=?', whereArgs: [idBuku]);
     return count;
   }
-
+  //delete data pada tabel stok
   Future<int> deleteStok(int idStok) async {
     Database db = await this.initDb();
     int count = await db.delete('stok', where: 'idStok=?', whereArgs: [idStok]);
