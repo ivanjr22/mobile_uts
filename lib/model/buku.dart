@@ -13,13 +13,13 @@ class Buku {
     this._tahunBuku = map['tahunBuku'];
   }
   int get idBuku => _idBuku;
-
+  //getter and setter
   String get namaBuku => this._namaBuku;
   set namaBuku(String value) => this._namaBuku = value;
-  
+  //getter and setter
   String get penerbitBuku => this._penerbitBuku;
   set penerbitBuku(String value) => this._penerbitBuku = value;
-
+  //getter and setter
   get tahunBuku => this._tahunBuku;
   set tahunBuku(value) => this._tahunBuku = value;
 
