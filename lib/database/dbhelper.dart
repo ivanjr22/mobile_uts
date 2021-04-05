@@ -30,7 +30,6 @@ class DbHelper {
  CREATE TABLE buku (
  idBuku INTEGER PRIMARY KEY AUTOINCREMENT,
   namaBuku TEXT,
-  kategoriBuku TEXT,
   penerbitBuku TEXT,
   tahunBuku INTEGER
  )

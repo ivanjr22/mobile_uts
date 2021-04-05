@@ -13,13 +13,11 @@ class FromBukuState extends State<FromBuku> {
   Buku buku;
   FromBukuState(this.buku);
   TextEditingController namaBukuController = TextEditingController();
-  TextEditingController kategoriBukuController = TextEditingController();
   TextEditingController penerbitBukuController = TextEditingController();
   TextEditingController tahunBukuController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     if (buku != null) {
-      kategoriBukuController.text = buku.kategoriBuku;
       namaBukuController.text = buku.namaBuku;
       penerbitBukuController.text = buku.penerbitBuku;
       tahunBukuController.text = buku.tahunBuku.toString();
@@ -45,22 +43,6 @@ class FromBukuState extends State<FromBuku> {
                     ),
                   ),
                   onChanged: (value) {
-                  },
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
-                child: TextField(
-                  controller: kategoriBukuController,
-                  keyboardType: TextInputType.text,
-                  decoration: InputDecoration(
-                    labelText: 'Kategori Buku',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(5.0),
-                    ),
-                  ),
-                  onChanged: (value) {
-                    //
                   },
                 ),
               ),
@@ -107,12 +89,10 @@ class FromBukuState extends State<FromBuku> {
                           if (buku == null) {
                             buku = Buku(
                                 namaBukuController.text,
-                                kategoriBukuController.text,
                                 penerbitBukuController.text,
                                 int.parse(tahunBukuController.text));
                           } else {
                             buku.namaBuku = namaBukuController.text;
-                            buku.kategoriBuku = kategoriBukuController.text;
                             buku.penerbitBuku = penerbitBukuController.text;
                             buku.tahunBuku = int.parse(tahunBukuController.text);
                           }

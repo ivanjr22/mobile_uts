@@ -41,7 +41,7 @@ class FromStokState extends State<FromStok> {
                   controller: namaStokController,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                    labelText: 'Nama Stok',
+                    labelText: 'Nama Buku',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5.0),
                     ),
@@ -56,7 +56,7 @@ class FromStokState extends State<FromStok> {
                   controller: kategoriStokController,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                    labelText: 'Kategori Stok',
+                    labelText: 'Kategori Buku',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5.0),
                     ),
@@ -71,7 +71,7 @@ class FromStokState extends State<FromStok> {
                   controller: penerbitStokController,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                    labelText: 'Penerbit Stok',
+                    labelText: 'Penerbit Buku',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5.0),
                     ),
@@ -86,7 +86,7 @@ class FromStokState extends State<FromStok> {
                   controller: tahunStokController,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
-                    labelText: 'Tahun Stok',
+                    labelText: 'Tahun Buku',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5.0),
                     ),
