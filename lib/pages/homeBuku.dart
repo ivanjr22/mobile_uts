@@ -71,14 +71,15 @@ class HomeBukuState extends State<HomeBuku> {
           child: ListTile(
             leading: CircleAvatar(
               backgroundColor: Colors.blue,
-              child: Icon(Icons.bookmark),
+              child: Text (this.BukuList[index].idBuku.toString()),
             ),
             title: Text(
               this.BukuList[index].namaBuku,
               style: textStyle,
             ),
             subtitle: Text(
-              "Penerbit: " + this.BukuList[index].penerbitBuku),
+              "Penerbit: " + this.BukuList[index].penerbitBuku +
+              " Tahun : " + this.BukuList[index].tahunBuku.toString()),
             trailing: GestureDetector(
               child: Icon(Icons.delete_forever),
               onTap: () async {

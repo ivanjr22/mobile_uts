@@ -72,7 +72,7 @@ class HomeStokState extends State<HomeStok> {
           child: ListTile(
             leading: CircleAvatar(
               backgroundColor: Colors.blue,
-              child: Icon(Icons.book),
+              child: Text (this.StokList[index].idStok.toString()),
             ),
             title: Text(
               this.StokList[index].namaStok,
